@@ -9,8 +9,8 @@ const username = "Côme";
 export default function Home() {
   return (
       <div>
-        <Come></Come>
-        {/* <div className="flex">
+        {/* <Come></Come> */}
+        <div className="flex">
         <div>
           <SidebarProvider>
             <AppSidebar></AppSidebar>
@@ -71,7 +71,7 @@ export default function Home() {
              
           </section>
         </div>
-      </div> */}
+      </div>
       </div>
     
   );
