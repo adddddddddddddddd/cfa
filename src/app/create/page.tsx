@@ -19,14 +19,29 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-
-
-
+import * as RadioGroup from "@radix-ui/react-radio-group";
+import { CircleCheck, Zap, Earth } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+
+const options = [
+  {
+    value: "CS",
+    label: "Climate Simulation",
+    description:
+      "Have all the climate data and qualitative explanations about your epw file.",
+    icon: <Earth className="mb-2.5 text-muted-foreground" />,
+  },
+  {
+    value: "CFAS",
+    label: "CFA Simulation",
+    description:
+      "Deepen the climate simulation by adding the types of buildings and their characteristics.",
+    icon: <Zap className="mb-2.5 text-muted-foreground" />,
+  },
+];
 
 export default function Create() {
   //comportement
@@ -51,10 +66,10 @@ export default function Create() {
   //render
   return (
     <div className="flex justify-center items-center h-svh">
-      <Card className="w-[350px]">
+      <Card className="w-[500px]">
         <CardHeader>
-          <CardTitle>Create Simulation</CardTitle>
-          <CardDescription>Make your own climate simulation.</CardDescription>
+          <CardTitle>Create a Simulation</CardTitle>
+          <CardDescription>Make your own simulation.</CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
@@ -66,10 +81,30 @@ export default function Create() {
                   <FormItem>
                     <FormLabel>Project Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="CFA Simulation" {...field} />
+                      <Input placeholder="CFA sim" {...field} />
                     </FormControl>
                     <FormDescription>
-                      This is the public display name of your project.
+                      This is the public display name of your simulation.
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="projectName"
+                render={({ field }) => (
+                  <FormItem >
+                    <FormLabel>EPW File</FormLabel>
+                    <FormControl>
+                      <Input
+                        id="epwfile"
+                        type="file"
+                        className="mt-1 file:pt-0.5"
+                      />
+                    </FormControl>
+                    <FormDescription>
+                      Choose the EPW file you want informations about.
                     </FormDescription>
                     <FormMessage />
                   </FormItem>
@@ -82,25 +117,34 @@ export default function Create() {
                   <FormItem>
                     <FormLabel>Type of simulation</FormLabel>
                     <FormControl>
-                    <RadioGroup defaultValue="comfortable">
-      <div className="flex items-center space-x-2">
-        <RadioGroupItem value="default" id="r1" />
-        <Label htmlFor="r1">Default</Label>
-      </div>
-      <div className="flex items-center space-x-2">
-        <RadioGroupItem value="comfortable" id="r2" />
-        <Label htmlFor="r2">Comfortable</Label>
-      </div>
-      <div className="flex items-center space-x-2">
-        <RadioGroupItem value="compact" id="r3" />
-        <Label htmlFor="r3">Compact</Label>
-      </div>
-    </RadioGroup>
+                      <RadioGroup.Root
+                        defaultValue={options[0].value}
+                        className="max-w-md w-full grid grid-cols-2 gap-4"
+                      >
+                        {options.map((option) => (
+                          <RadioGroup.Item
+                            key={option.value}
+                            value={option.value}
+                            className={cn(
+                              "relative group ring-[1px] ring-border rounded py-2 px-3 text-start",
+                              "data-[state=checked]:ring-2 data-[state=checked]:ring-blue-500"
+                            )}
+                          >
+                            <CircleCheck className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 h-6 w-6 text-primary fill-blue-500 stroke-white group-data-[state=unchecked]:hidden" />
+
+                            {option.icon}
+                            <span className="font-semibold tracking-tight">
+                              {option.label}
+                            </span>
+                            <p className="text-xs">{option.description}</p>
+                          </RadioGroup.Item>
+                        ))}
+                      </RadioGroup.Root>
                     </FormControl>
-                    <FormDescription>
+                    {/* <FormDescription>
                       Choose whether you want a simple climate simulation or a
                       more complex CFA simulation.
-                    </FormDescription>
+                    </FormDescription> */}
                     <FormMessage />
                   </FormItem>
                 )}
@@ -117,4 +161,3 @@ export default function Create() {
     </div>
   );
 }
-
