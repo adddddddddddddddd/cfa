@@ -1,11 +1,9 @@
 "use client"
 
 import {
-  BadgeCheck,
-  Bell,
+
   ChevronsUpDown,
   Cog,
-  CreditCard,
   LogOut,
   Sparkles,
   User,

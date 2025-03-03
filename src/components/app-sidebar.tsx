@@ -12,16 +12,9 @@ import {
 } from "@/components/ui/sidebar";
 import { NavUser } from "@/components/nav-user";
 import { GalleryVerticalEnd } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
-import { url } from "inspector";
-import { Plus, Home, Users, User, Cog } from "lucide-react";
-import { title } from "process";
+
+
+import { Plus, Home, Users } from "lucide-react";
 
 // Menu items
 const menuItems = [
