@@ -19,7 +19,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+
+
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -47,67 +50,71 @@ export default function Create() {
   }
   //render
   return (
-    <Card className="w-[350px]">
-      <CardHeader>
-        <CardTitle>Create Simulation</CardTitle>
-        <CardDescription>
-          Make your own climate simulation.
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-            <FormField
-              control={form.control}
-              name="projectName"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Project Name</FormLabel>
-                  <FormControl>
-                    <Input placeholder="CFA Simulation" {...field} />
-                  </FormControl>
-                  <FormDescription>
-                    This is the public display name of your project.
-                  </FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="projectName"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Type of simulation</FormLabel>
-                  <FormControl>
-                    <Input placeholder="CFA Simulation" {...field} />
-                  </FormControl>
-                  <FormDescription>
-                    Choose whether you want a simple climate simulation or a more complex CFA simulation.
-                  </FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <Select>
-                <SelectTrigger id="framework">
-                  <SelectValue placeholder="Select" />
-                </SelectTrigger>
-                <SelectContent position="popper">
-                  <SelectItem value="low">Low</SelectItem>
-                  <SelectItem value="medium">Medium</SelectItem>
-                  <SelectItem value="high">High</SelectItem>
-                </SelectContent>
-              </Select>
-            <CardFooter className="flex justify-between">
-              <Button variant="outline">Cancel</Button>
-              <Button type="submit">Submit</Button>
-            </CardFooter>
-          </form>
-        </Form>
-      </CardContent>
-      
-    </Card>
+    <div className="flex justify-center items-center h-svh">
+      <Card className="w-[350px]">
+        <CardHeader>
+          <CardTitle>Create Simulation</CardTitle>
+          <CardDescription>Make your own climate simulation.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+              <FormField
+                control={form.control}
+                name="projectName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Project Name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="CFA Simulation" {...field} />
+                    </FormControl>
+                    <FormDescription>
+                      This is the public display name of your project.
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="projectName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Type of simulation</FormLabel>
+                    <FormControl>
+                    <RadioGroup defaultValue="comfortable">
+      <div className="flex items-center space-x-2">
+        <RadioGroupItem value="default" id="r1" />
+        <Label htmlFor="r1">Default</Label>
+      </div>
+      <div className="flex items-center space-x-2">
+        <RadioGroupItem value="comfortable" id="r2" />
+        <Label htmlFor="r2">Comfortable</Label>
+      </div>
+      <div className="flex items-center space-x-2">
+        <RadioGroupItem value="compact" id="r3" />
+        <Label htmlFor="r3">Compact</Label>
+      </div>
+    </RadioGroup>
+                    </FormControl>
+                    <FormDescription>
+                      Choose whether you want a simple climate simulation or a
+                      more complex CFA simulation.
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <CardFooter className="flex justify-between">
+                <Button variant="outline">Cancel</Button>
+                <Button type="submit">Submit</Button>
+              </CardFooter>
+            </form>
+          </Form>
+        </CardContent>
+      </Card>
+    </div>
   );
 }
 
