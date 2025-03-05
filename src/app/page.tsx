@@ -68,11 +68,10 @@ export default function Home() {
                 You did not find what you were looking for? Create your own simulation!
               </h1>
               <div className="flex"> <Button><Plus/> Create Simulation</Button></div>
-             
           </section>
         </div>
       </div>
       </div>
-    
+
   );
 }

@@ -81,10 +81,13 @@ export function NavUser({
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem className="text-purple-500 cursor-pointer">
+                <DropdownMenuItem
+                className="text-purple-500 cursor-pointer"
+                onSelect={() => window.location.href = 'http://localhost:3000/come'}
+                >
                 <Sparkles />
                 Upgrade to Pro
-              </DropdownMenuItem>
+                </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
