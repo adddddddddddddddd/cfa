@@ -1,11 +1,11 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "./ui/button";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
-} from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+} from "./ui/card";
+import { Separator } from "./ui/separator";
 import {
   HeartIcon,
   MessageCircleIcon,

@@ -9,18 +9,19 @@ import {
   SidebarMenu,
   SidebarMenuItem,
   SidebarMenuButton,
-} from "@/components/ui/sidebar";
-import { NavUser } from "@/components/nav-user";
+} from "./ui/sidebar";
+import { NavUser } from "./nav-user";
 import { GalleryVerticalEnd } from "lucide-react";
 
 
-import { Plus, Home, Users } from "lucide-react";
+import { Plus, Home, Users, CircleFadingArrowUp } from "lucide-react";
 
 // Menu items
 const menuItems = [
   { title: "Create", icon: Plus, url: "/create" },
   { title: "Dashboard", icon: Home, url: "/" },
   { title: "Community", icon: Users, url: "/community" },
+  { title: "Premium Version", icon: CircleFadingArrowUp, url: "/come" },
 //   { title: "Profile", icon: User, url: "/profile" },
 //   { title: "Settings", icon: Cog, url: "/settings" },
 ];

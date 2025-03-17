@@ -1,9 +1,9 @@
-import { SidebarProvider } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
-import SimulationCard from "@/components/SimulationCard";
-import { Button } from "@/components/ui/button";
+import { SidebarProvider } from "../components/ui/sidebar";
+import { AppSidebar } from "../components/app-sidebar";
+import SimulationCard from "../components/SimulationCard";
+import { Button } from "../components/ui/button";
 import { Plus } from "lucide-react";
-import { Come } from "@/components/côme"
+import { Come } from "../components/côme"
 const username = "Côme";
 
 export default function Home() {
@@ -68,11 +68,10 @@ export default function Home() {
                 You did not find what you were looking for? Create your own simulation!
               </h1>
               <div className="flex"> <Button><Plus/> Create Simulation</Button></div>
-             
           </section>
         </div>
       </div>
       </div>
-    
+
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Input } from "../../components/ui/input";
+import { Button } from "../../components/ui/button";
 import {
   Form,
   FormField,
@@ -10,7 +10,7 @@ import {
   FormControl,
   FormDescription,
   FormMessage,
-} from "@/components/ui/form";
+} from "../../components/ui/form";
 import {
   Card,
   CardContent,
@@ -18,10 +18,10 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "../../components/ui/card";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 import { CircleCheck, Zap, Earth } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
