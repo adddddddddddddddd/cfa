@@ -9,8 +9,8 @@ import {
   SidebarMenu,
   SidebarMenuItem,
   SidebarMenuButton,
-} from "@/components/ui/sidebar";
-import { NavUser } from "@/components/nav-user";
+} from "./ui/sidebar";
+import { NavUser } from "./nav-user";
 import { GalleryVerticalEnd } from "lucide-react";
 
 

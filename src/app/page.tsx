@@ -1,9 +1,9 @@
-import { SidebarProvider } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
-import SimulationCard from "@/components/SimulationCard";
-import { Button } from "@/components/ui/button";
+import { SidebarProvider } from "../components/ui/sidebar";
+import { AppSidebar } from "../components/app-sidebar";
+import SimulationCard from "../components/SimulationCard";
+import { Button } from "../components/ui/button";
 import { Plus } from "lucide-react";
-import { Come } from "@/components/côme"
+import { Come } from "../components/côme"
 const username = "Côme";
 
 export default function Home() {
