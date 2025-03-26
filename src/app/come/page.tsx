@@ -6,7 +6,7 @@ import { Plus } from "lucide-react";
 import { Come } from "../../components/côme";
 import { CheckIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
-import LogoCFA from '/Users/comechayrigues/Desktop/Scolarité Centrale Supélec/2A/Cours/Pôle Projet EPW/CFA React/cfa/src/app/public/Logo_CFA_sans_CFA.png'; // Assurez-vous que le chemin est correct
+import LogoCFA from '../public/Logo_CFA_sans_CFA.png'; // Assurez-vous que le chemin est correct
 
 const username = "Côme";
 

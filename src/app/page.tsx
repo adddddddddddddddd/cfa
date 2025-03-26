@@ -1,12 +1,17 @@
+"use client";
 import { SidebarProvider } from "../components/ui/sidebar";
 import { AppSidebar } from "../components/app-sidebar";
 import SimulationCard from "../components/SimulationCard";
 import { Button } from "../components/ui/button";
 import { Plus } from "lucide-react";
 import { Come } from "../components/côme"
-const username = "Côme";
+import { useAuth } from "../context/AuthContext";
+
+
 
 export default function Home() {
+  const { user } = useAuth();
+  const username = "Côme";
   return (
       <div>
         {/* <Come></Come> */}
@@ -20,7 +25,7 @@ export default function Home() {
           <section className="border-grid pb-4">
             <div className="flex flex-col p-8 space-y-4">
               <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1]">
-                Welcome {username} 👋
+                Welcome {user?.email} 👋
               </h1>
               <p className="max-w-2xl text-lg font-light text-foreground">
                 Here are your simulations and the simulations of the CFA community.
