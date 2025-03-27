@@ -6,6 +6,8 @@ import { createContext, useContext, useState, useEffect } from "react";
 export interface User {
   email: string;
   pseudo: string;
+  job: string;
+  birthDate: string;
   // Ajoute d'autres propriétés si besoin (par exemple name, roles, etc.)
 }
 

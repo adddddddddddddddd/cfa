@@ -9,6 +9,9 @@ export default function Auth() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { setUser } = useAuth();
+  const [username, setUsername] = useState("");
+  const [job, setJob] = useState("");
+  const [dateOfBirth, setDateOfBirth] = useState("");
 
   const handleLogin = async () => {
     try {

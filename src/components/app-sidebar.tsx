@@ -26,9 +26,9 @@ const menuItems = [
 //   { title: "Settings", icon: Cog, url: "/settings" },
 ];
 const user = {
-  name: "shadcn",
-  email: "m@example.com",
-  avatar: "/avatars/shadcn.jpg",
+  name: "Connected User", // Replace with the actual connected user's name dynamically if needed
+  email: "connecteduser@example.com",
+  avatar: "/avatars/connecteduser.jpg",
 };
 
 export function AppSidebar() {
